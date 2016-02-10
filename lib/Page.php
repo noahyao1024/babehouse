@@ -13,7 +13,6 @@
  *  
  **/
 
-
 class Page {
     private static $_value = array();
 
