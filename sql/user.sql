@@ -1,0 +1,8 @@
+CREATE TABLE `user_info` (
+    `user_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `user_name` VARCHAR(10) NOT NULL DEFAULT '0',
+    `status` SMALLINT UNSIGNED NOT NULL DEFAULT '0',
+    `create_time` INT UNSIGNED NOT NULL DEFAULT '0',
+    `ext_info` VARCHAR(1024) NOT NULL DEFAULT '0',
+    PRIMARY KEY `user_id`
+) DEFAULT SET CHARSET=utf8;
