@@ -17,7 +17,12 @@ class index {
     const TPL = "index";
     
     public function execute() {
-        Page::assign("yaokun", array("foo" => 123, ));
+        $arrOutput = array(
+            'title' => "MyHome",
+            'nav2' => 'Download',
+            'nav3' => 'About',
+        );
+        Page::assign("pagedata", $arrOutput);
         Page::setTpl(self::TPL);
     
     }

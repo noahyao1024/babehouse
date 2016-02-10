@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
+<script type="text/javascript">
+  //var pagedata = new Array();
+  //pagedata.title = "ttt";
+  //pagedata.nav2 = "aklskl";
+
+</script>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,20 +42,20 @@
 
             <div class="masthead clearfix">
               <div class="inner">
-                <h3 class="masthead-brand">Cover</h3>
+                <h3 class="masthead-brand"></h3>
                 <nav>
                   <ul class="nav masthead-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li class="active"><a id="nav1">Home</a></li>
+                    <li><a id="nav2"></a></li>
+                    <li><a id="nav3"></a></li>
                   </ul>
                 </nav>
               </div>
             </div>
 
             <div class="inner cover">
-              <h1 class="cover-heading">Cover your page.</h1>
-              <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+              <h1 class="cover-heading">TEXTCODE</h1>
+              <p class="lead">Very NB APP</p>
               <p class="lead">
                 <a href="#" class="btn btn-lg btn-default">Learn more</a>
               </p>
@@ -56,7 +63,7 @@
 
             <div class="mastfoot">
               <div class="inner">
-              <p>haosxianr feat with syaokun219</p>
+                <p>haosxianr feat with syaokun219</p>
               </div>
             </div>
 
@@ -72,4 +79,12 @@
     <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </body>
+
+
+  <script type="text/javascript">
+    //alert(pagedata.title);
+    $(".masthead-brand").text(pagedata.title);
+    $("#nav2").text(pagedata.nav2);
+  </script>
+
   </html>
