@@ -25,6 +25,8 @@ class Page {
         foreach(self::$_value as $k => $v) {
             if(is_array($v)) {
                 echo sprintf("var %s = %s", $k, json_encode($v));
+            } else {
+                echo sprintf("var %s = %s", $k, $v);
             }
         }
         echo "</script>\n";
