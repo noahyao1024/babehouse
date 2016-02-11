@@ -1,7 +1,7 @@
 <?php
 
 class Http_Request {
-    private static $_get = null;
+    private static $_data = null;
     private static $_ready = false;
     private static $_ui_class = null;
 
@@ -15,10 +15,15 @@ class Http_Request {
         }
         $last_uri = explode('?', $query_string[$cnt-1]);
         self::$_ui_class [] = $last_uri[0];
-        $tmp_get = explode('&', $last_uri[1]);
-        foreach($tmp_get as $v) {
-            $tmp = explode("=", $v);
-            self::$_get[$tmp[0]] = $tmp[1];
+        if (1 < count($last_uri)) {
+            $tmp_get = explode('&', $last_uri[1]);
+            foreach($tmp_get as $v) {
+                $tmp = explode("=", $v);
+                self::$_data[$tmp[0]] = $tmp[1];
+            }
+        }
+        foreach($_POST as $k => $v) {
+            self::$_data[$k] = $v;
         }
         self::$_ready = true;
     }
@@ -32,6 +37,17 @@ class Http_Request {
             self::_init();
         }
         return self::$_ui_class;
+    }
+
+    public static function get($field, $default_value = null) {
+        if (!self::$_ready) {
+            self::_init();
+        }
+        if(isset(self::$_data[$field])) {
+            return self::$_data[$field];
+        } else {
+            return $default_value;
+        }
     }
 
 }
