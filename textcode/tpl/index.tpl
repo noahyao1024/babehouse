@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Cover Template for Bootstrap</title>
+  <title id='title'></title>
 
   <!-- Bootstrap core CSS -->
   <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -84,6 +84,7 @@
   <script type="text/javascript">
     //alert(pagedata.title);
     $(".masthead-brand").text(pagedata.title);
+    $("#title").text(pagedata.title);
     $("#nav1").text(pagedata.nav1);
     $("#nav2").text(pagedata.nav2);
     $("#nav3").text(pagedata.nav3);

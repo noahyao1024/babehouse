@@ -65,6 +65,10 @@
 		console.log(pagedata);
 		$("#text-title").val(pagedata.title);
 		$("#text-nav1").val(pagedata.nav1);
+		$("#text-nav2").val(pagedata.nav2);
+		$("#text-nav3").val(pagedata.nav3);
+		$("#text-center").val(pagedata.center);
+		$("#text-intro").val(pagedata.intro);
 		$("#submit").click(function(){
 			var title = $("#text-title").val();
 			var nav1 = $("#text-nav1").val();
@@ -82,6 +86,12 @@
 				intro: intro,
 			},
 			function(data,status){
+				if(data.errno == 0) {
+					alert("设置成功");
+				} else {
+					alert("设置失败，请重试");
+				}
+
 			});
 		});
 	});
