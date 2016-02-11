@@ -61,6 +61,7 @@ require_once($ui_path);
 $class_name = $arr_ui[count($arr_ui)-1];
 call_user_func(array($class_name, EXEC_FUNC));
 
+define('RUN_END_TIME', microtime());
 if(DEBUG) {
     $execute_time = (RUN_END_TIME - RUN_START_TIME)*1000;
     echo "execute time : $execute_time ms\n";
