@@ -11,6 +11,7 @@ class setting {
             'title' => $title,
             'nav1' => $nav1,
         );
+        var_dump($doc);
         $res = $db->textcode->insert($doc);
         $arrRet = array();
         $arrRet = $res;
