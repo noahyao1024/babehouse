@@ -20,21 +20,19 @@
 		<div class="row">
 			<div class="col-xs-6 col-sm-4"></div>
 			<div class="col-xs-6 col-sm-4">
+
 				
+				<div class="form-group">
+					<label>Title</label>
+					<input type='input' class="form-control" id="text-title" placeholder="Title">
+				</div>
+				<div class="form-group">
+					<label>Nav1</label>
+					<input type="password" class="form-control" id="text-nav1" placeholder="Nav1">
+				</div>
 
-				<form method="post">
-					<div class="form-group">
-						<label for="titl">Email address</label>
-						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-					</div>
-					<div class="form-group">
-						<label for="exampleInputPassword1">Password</label>
-						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-					</div>
-
-					<button type="submit" class="btn btn-default">Submit</button>
-				</form>
-
+				<button class="btn btn-default" id='submit'>Submit</button>
+				
 
 			</div>
 			<div class="col-xs-6 col-sm-4"></div>
@@ -47,6 +45,21 @@
 </body>
 
 <script type="text/javascript">
+	$(document).ready(function(){
+
+		$("#submit").click(function(){
+			var title = $("#text-title").val();
+			var nav1 = $("#text-nav1").val();
+			$.post("http://syaokun219.top/babehouse/admin/setting",
+			{
+				title: title,
+				nav1: nav1,
+			},
+			function(data,status){
+				alert("Data: " + data + "\nStatus: " + status);
+			});
+		});
+	});
 </script>
 
 </html>
