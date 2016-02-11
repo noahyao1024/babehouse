@@ -86,7 +86,8 @@
 				intro: intro,
 			},
 			function(data,status){
-				if(data.errno == 0) {
+				var json_data = eval(data);
+				if(json_data.errno == 0) {
 					alert("设置成功");
 				} else {
 					alert("设置失败，请重试");
