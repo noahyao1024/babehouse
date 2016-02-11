@@ -28,7 +28,23 @@
 				</div>
 				<div class="form-group">
 					<label>Nav1</label>
-					<input class="form-control" id="text-nav1" placeholder="Nav1">
+					<input class="form-control" id="text-nav1">
+				</div>
+				<div class="form-group">
+					<label>Nav2</label>
+					<input class="form-control" id="text-nav2">
+				</div>
+				<div class="form-group">
+					<label>Nav3</label>
+					<input class="form-control" id="text-nav3">
+				</div>
+				<div class="form-group">
+					<label>Center</label>
+					<input class="form-control" id="text-center">
+				</div>
+				<div class="form-group">
+					<label>Intro</label>
+					<input class="form-control" id="text-intro">
 				</div>
 
 				<button class="btn btn-default" id='submit'>Submit</button>
@@ -52,10 +68,18 @@
 		$("#submit").click(function(){
 			var title = $("#text-title").val();
 			var nav1 = $("#text-nav1").val();
+			var nav2 = $("#text-nav2").val();
+			var nav3 = $("#text-nav3").val();
+			var center = $("#text-center").val();
+			var intro = $("#text-intro").val();
 			$.post("http://syaokun219.top/babehouse/textcode/admin/setting",
 			{
 				title: title,
 				nav1: nav1,
+				nav2: nav2,
+				nav3: nav3,
+				center: center,
+				intro: intro,
 			},
 			function(data,status){
 			});

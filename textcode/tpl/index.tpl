@@ -54,8 +54,8 @@
             </div>
 
             <div class="inner cover">
-              <h1 class="cover-heading">TEXTCODE</h1>
-              <p class="lead">Very NB APP</p>
+              <h1 class="cover-heading" id="center"></h1>
+              <p class="lead" id="intro"></p>
               <p class="lead">
                 <a href="#" class="btn btn-lg btn-default">Learn more</a>
               </p>
@@ -84,7 +84,11 @@
   <script type="text/javascript">
     //alert(pagedata.title);
     $(".masthead-brand").text(pagedata.title);
+    $("#nav1").text(pagedata.nav1);
     $("#nav2").text(pagedata.nav2);
+    $("#nav3").text(pagedata.nav3);
+    $("#center").text(pagedata.center);
+    $("#intro").text(pagedata.intro);
   </script>
 
   </html>

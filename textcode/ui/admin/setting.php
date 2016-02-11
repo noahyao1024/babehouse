@@ -7,12 +7,22 @@ class setting {
     public static function execute() {
         $title = Http_Request::get('title', '');
         $nav1 = Http_Request::get('nav1', '');
+        $nav2 = Http_Request::get('nav2', '');
+        $nav3 = Http_Request::get('nav3', '');
+        $center = Http_Request::get('nav1', '');
+        $intro = Http_Request::get('intro', '');
+
         $db = Storage_Mongo::getDb(self::DB_NAME);
         $doc = array(
             "_id" => self::ID,
             'title' => $title,
             'nav1' => $nav1,
+            'nav2' => $nav2,
+            'nav3' => $nav3,
+            'center' => $center,
+            'intro' => $intro,
         );
+
         $res = $db->textcode->save($doc);
         $arrRet = array();
         $arrRet = $res;
