@@ -50,7 +50,7 @@
 		$("#submit").click(function(){
 			var title = $("#text-title").val();
 			var nav1 = $("#text-nav1").val();
-			$.post("http://syaokun219.top/babehouse/admin/setting",
+			$.post("http://syaokun219.top/babehouse/textcode/admin/setting",
 			{
 				title: title,
 				nav1: nav1,
