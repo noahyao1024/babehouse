@@ -28,7 +28,7 @@
 				</div>
 				<div class="form-group">
 					<label>Nav1</label>
-					<input type="password" class="form-control" id="text-nav1" placeholder="Nav1">
+					<input class="form-control" id="text-nav1" placeholder="Nav1">
 				</div>
 
 				<button class="btn btn-default" id='submit'>Submit</button>
@@ -56,7 +56,7 @@
 				nav1: nav1,
 			},
 			function(data,status){
-				alert("Data: " + data + "\nStatus: " + status);
+				console.log(data);
 			});
 		});
 	});
