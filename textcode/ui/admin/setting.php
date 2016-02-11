@@ -1,6 +1,6 @@
 <?php
 
 class setting {
-    public function exectute() {
+    public function execute() {
     }
 }

@@ -15,8 +15,13 @@
 
 class index {
     const TPL = "index";
+    const DB_NAME = "test";
     
     public function execute() {
+        $db = Storage_Mongo::getDb(self::DB_NAME);
+        $res = $db->helloworld->find();
+        var_dump($res);
+        exit;
         $arrOutput = array(
             'title' => "MyHome",
             'nav2' => 'Download',
