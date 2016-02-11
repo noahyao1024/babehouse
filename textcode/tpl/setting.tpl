@@ -56,7 +56,8 @@
 				nav1: nav1,
 			},
 			function(data,status){
-				console.log(data);
+				var json = eval(data);
+				console.log(json);
 			});
 		});
 	});
