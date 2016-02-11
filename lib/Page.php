@@ -44,4 +44,15 @@ class Page {
             return self::$_value[$key];
         }
     }
+
+    public static function jsonRet($errno = 0, $errmsg = "success", $data = null) {
+        $arrRet = array(
+            'errno' => $errno,
+            'errmsg' => $errmsg,
+        );
+        if (!is_null($data)) {
+            $arrRet['data'] = $data;
+        }
+        echo json_encode($arrRet);
+    }
 }
