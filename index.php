@@ -1,7 +1,7 @@
 <?php
 
 try {
-    //define("APP_NAME", 'textcode');
+    define("APP_NAME", 'textcode');
     define('DEBUG', true);
 
     require_once('lib/BabeFrame.php');
