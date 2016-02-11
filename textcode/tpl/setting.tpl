@@ -86,7 +86,7 @@
 				intro: intro,
 			},
 			function(data,status){
-				var json_data = eval(data);
+				var json_data = JSON.parse(data);
 				console.log(json_data);
 				if(json_data.errno == 0) {
 					alert("设置成功");
