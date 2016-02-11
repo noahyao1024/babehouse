@@ -61,6 +61,24 @@
               </p>
             </div>
 
+            <h3>Comment Area</h3>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Email</th>
+                  <th>Comment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <td>627571@qq.com</td>
+                  <td>我擦，这个软件，太他妈的好用了</td>
+                </tr>
+              </tbody>
+            </table>
+
             <div class="mastfoot">
               <div class="inner">
                 <p>haosxianr feat with syaokun219</p>
