@@ -46,7 +46,8 @@
 
 <script type="text/javascript">
 	$(document).ready(function(){
-
+		$("#text-title").val(pagedata.title);
+		$("#text-nav1").val(pagedata.nav1);
 		$("#submit").click(function(){
 			var title = $("#text-title").val();
 			var nav1 = $("#text-nav1").val();
