@@ -9,7 +9,7 @@ class setting {
         $nav1 = Http_Request::get('nav1', '');
         $db = Storage_Mongo::getDb(self::DB_NAME);
         $doc = array(
-            "_id" => self::ID,
+            "_id" => new MongoID(self::ID),
             'title' => $title,
             'nav1' => $nav1,
         );
