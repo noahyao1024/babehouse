@@ -2,7 +2,6 @@
 
 class index {
     const TPL = "setting";
-    
     const DB_NAME = "test";
 
     public function execute() {

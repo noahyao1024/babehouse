@@ -11,8 +11,7 @@ class setting {
             'title' => $title,
             'nav1' => $nav1,
         );
-        var_dump($doc);
-        $res = $db->textcode->update($doc);
+        $res = $db->textcode->save($doc);
         $arrRet = array();
         $arrRet = $res;
         Page::jsonRet(0, 'success', $arrRet);

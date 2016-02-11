@@ -19,9 +19,7 @@ class index {
     
     public function execute() {
         $db = Storage_Mongo::getDb(self::DB_NAME);
-        $res = $db->helloworld->find();
-        var_dump($res);
-        exit;
+        $res = $db->textcode->find();
         $arrOutput = array(
             'title' => "MyHome",
             'nav2' => 'Download',
