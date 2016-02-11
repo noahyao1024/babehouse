@@ -12,7 +12,7 @@ class setting {
             'nav1' => $nav1,
         );
         var_dump($doc);
-        $res = $db->textcode->insert($doc);
+        $res = $db->textcode->update($doc);
         $arrRet = array();
         $arrRet = $res;
         Page::jsonRet(0, 'success', $arrRet);
