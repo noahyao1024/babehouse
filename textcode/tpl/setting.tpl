@@ -46,6 +46,7 @@
 
 <script type="text/javascript">
 	$(document).ready(function(){
+		console.log(pagedata);
 		$("#text-title").val(pagedata.title);
 		$("#text-nav1").val(pagedata.nav1);
 		$("#submit").click(function(){

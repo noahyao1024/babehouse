@@ -8,6 +8,7 @@ class index {
         $db = Storage_Mongo::getDb(self::DB_NAME);
         $res = $db->textcode->findOne();
         Page::assign('pagedata', $res);
+        var_dump($res);
         Page::setTpl(self::TPL);
     }
 }
