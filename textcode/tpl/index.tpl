@@ -61,7 +61,8 @@
               </p>
             </div>
 
-            <h3>Comment Area</h3>
+            <br><br>
+            <h4>Comment Area</h4>
             <table class="table table-hover">
               <thead>
                 <tr>
