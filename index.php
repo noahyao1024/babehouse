@@ -1,13 +1,10 @@
 <?php
 
 function init() {
-    if(!defined(APP_NAME)) {
-        $request_uri = $_SERVER['REQUEST_URI'];
-        $arr_tmp = explode("/", $request_uri);
-        $app_name = $arr_tmp[2];
-        echo $app_name;
-        define(APP_NAME, $app_name);
-    }
+    $request_uri = $_SERVER['REQUEST_URI'];
+    $arr_tmp = explode("/", $request_uri);
+    $app_name = $arr_tmp[2];
+    define(APP_NAME, $app_name);
 }
 
 try {
