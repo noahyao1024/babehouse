@@ -50,4 +50,7 @@ class Http_Request {
         }
     }
 
+    public static function getUserIp() {
+    }
+
 }
