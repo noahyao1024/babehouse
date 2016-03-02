@@ -1,5 +1,5 @@
 <?php
 
 class Lib_Const {
-    const TEST = "111";
+    const DEFAULT_TPL = "ang"; // default angular
 }

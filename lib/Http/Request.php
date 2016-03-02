@@ -50,6 +50,15 @@ class Http_Request {
         }
     }
 
+    /**
+     * @brief 
+     *
+     * @return 
+     */
+    public static function getAll() {
+        return self::$_data;
+    }
+
     public static function getUserIp() {
     }
 

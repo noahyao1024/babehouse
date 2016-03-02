@@ -20,20 +20,21 @@ class BabeHouse {
         self::$_request_uri = Http_Request::getUri();
     }
 
-    public static function autoloadframe($class_name, $path = LIB_PATH) {
+    public static function autoloadframe($class_name) {
         $strClassname = str_replace('_', '/', $class_name);
         $arrClassName = explode("/", $strClassname);
-        $strClassPath = implode('/', $arrClassName);
-        require_once($path."/".$strClassname.".php");
+        $strLibClassPath = LIB_PATH ."/". implode('/', $arrClassName).".php";
+        $strAppClassPath = APP_PATH ."/". implode('/', $arrClassName).".php";
+        if (file_exists($strLibClassPath)) {
+            require_once($strLibClassPath);
+        } else if(file_exists($strAppClassPath)) {
+            require_once($strAppClassPath);
+        } else {
+            throw new Exception(sprintf("fail to autoload class[%s]", $class_name));
+            return false;
+        }
+        return true;
     }
-
-    public static function autoloadapp($class_name, $path = APP_PATH) {
-        $strClassname = str_replace('_', '/', $class_name);
-        $arrClassName = explode("/", $strClassname);
-        $strClassPath = implode('/', $arrClassName);
-        require_once($path."/".$strClassname.".php");
-    }
-
 }
 
 define("EXEC_FUNC", 'execute');
@@ -42,7 +43,6 @@ define('LIB_PATH', __DIR__);
 define('ROOT_PATH', __DIR__."/../");
 define('APP_PATH', ROOT_PATH.APP_NAME);
 spl_autoload_register(array('BabeHouse', "autoloadframe"));
-spl_autoload_register(array('BabeHouse', "autoloadapp"));
 
 if (!is_dir(APP_PATH)) {
     throw new Exception('invalid app, can not find the app path, app name : '. APP_NAME);

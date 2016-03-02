@@ -9,7 +9,6 @@ function init() {
 
 try {
     //define("APP_NAME", 'textcode');
-
     init();
     define('DEBUG', false);
     require_once('lib/BabeFrame.php');
