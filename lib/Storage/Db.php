@@ -1,25 +1,32 @@
 <?php
 
 class Storage_Db {
-    private static $_db = null;
+    private static $_dbMap = null;
 
-    private static function _init($db_name) {
-        if (is_null(self::$_db)) {
-            throw new Exception('connect db failed!');
+    private static function _getDb($dbconfig) {
+        $key = implode("|", $dbconfig);
+        if(!isset(self::$_dbMap[$key])) {
+            $db = new mysqli($dbconfig[0], $dbconfig[1], $dbconfig[2], $dbconfig[3]);
+            if(false === $db) {
+                throw new Exception(sprintf("fail to init db!"));
+            }
+            self::$_dbMap[$key] = $db;
         }
+        return self::$_dbMap[$key];
     }
 
-    public static function query($sql, $db_name) {
-        if (0 >= strlen($db_name)) {
-            throw new Exception("invalid db_name");
+    public static function query($sql, $dbconfig) {
+        $db = self::_getDb($dbconfig);
+        $ret_handler = $db->query($sql);
+        if(0 === $db->errno) {
+        } else {
+            throw new Exception(sprintf("fail to execute sql[%s]", $sql));
         }
-        if (is_null(self::$_db)) {
-            self::_init($db_name);
+        if(is_bool($ret_handler)) {
+            return $ret_handler;
+        } else {
+            return $ret_handler->fetch_all(MYSQLI_ASSOC);
         }
-        $res = self::$_db->query();
-        // todo
-        // exception
-        return $res;
     }
 
 }

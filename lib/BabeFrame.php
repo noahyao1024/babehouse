@@ -41,8 +41,9 @@ define("EXEC_FUNC", 'execute');
 define('RUN_START_TIME', microtime());
 define('LIB_PATH', __DIR__);
 define('ROOT_PATH', __DIR__."/../");
-define('APP_PATH', ROOT_PATH.APP_NAME);
 spl_autoload_register(array('BabeHouse', "autoloadframe"));
+
+date_default_timezone_set('Asia/Shanghai');
 
 if (!is_dir(APP_PATH)) {
     throw new Exception('invalid app, can not find the app path, app name : '. APP_NAME);
