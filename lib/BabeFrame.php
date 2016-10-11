@@ -30,7 +30,7 @@ class BabeHouse {
         } else if(file_exists($strAppClassPath)) {
             require_once($strAppClassPath);
         } else {
-            throw new Exception(sprintf("fail to autoload class[%s]", $class_name));
+            throw new Exception(sprintf("fail to autoload class[%s], app_path name[%s]", $class_name, $strAppClassPath));
             return false;
         }
         return true;

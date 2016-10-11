@@ -3,6 +3,17 @@
 class Storage_Db {
     private static $_dbMap = null;
 
+    /*
+     * 
+     $dbConfig = array(
+         "host:port",
+         "root"
+         "passwd",
+         "db",
+     );
+     */
+
+
     private static function _getDb($dbconfig) {
         $key = implode("|", $dbconfig);
         if(!isset(self::$_dbMap[$key])) {
@@ -20,7 +31,8 @@ class Storage_Db {
         $ret_handler = $db->query($sql);
         if(0 === $db->errno) {
         } else {
-            throw new Exception(sprintf("fail to execute sql[%s]", $sql));
+            //throw new Exception(sprintf("fail to execute sql[%s], errmsg[%s]", $sql, $db->error));
+            return sprintf("fail to execute sql[%s], errmsg[%s]", $sql, $db->error);
         }
         if(is_bool($ret_handler)) {
             return $ret_handler;
