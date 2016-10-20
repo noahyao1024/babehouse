@@ -25,6 +25,9 @@ class Http_Request {
         foreach($_POST as $k => $v) {
             self::$_data[$k] = $v;
         }
+        foreach($_GET as $k => $v) {
+            self::$_data[$k] = $v;
+        }
         self::$_ready = true;
     }
 
