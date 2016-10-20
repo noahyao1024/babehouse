@@ -63,7 +63,7 @@ class Util_Param {
     private static function _returnError($name, $type, $is_throw_exception) {
         $msg = self::_getErrmsg($type);
         if($is_throw_exception) {
-            throw new Exception("input [$name]->[$msg]", Tieba_Errcode::ERR_PARAM_ERROR);
+            throw new Exception("input [$name]->[$msg]", Util_Errcode::ERR_PARAM_ERROR);
         } else {
             return $msg;
         }
@@ -72,17 +72,17 @@ class Util_Param {
     /**
      * @brief 检查参数校验
      *
-     * @param $arrInput 入参
+     * @param $input 入参
      * @param $arrField 数据域
-     * @param $arrOpt 选项
+     * @param $option 选项
      *
      * @return 
      */
-    public static function checkParam($arrInput, $arrField, $arrOpt = array()) {
+    public static function checkParam($input, $arrField, $option = array()) {
         $arrRet = array();
-        $is_throw_exception = (int)$arrOpt['is_throw_exception'];
+        $is_throw_exception = (int)$option['is_throw_exception'];
         foreach($arrField as $name => $type) {
-            $val = $arrInput[$name];
+            $val = $input[$name];
             switch($type) {
                 case self::DEFAULT_NOT_NULL:
                     if(is_null($val)) {
@@ -180,21 +180,5 @@ class Util_Param {
     public static function checkID($id) {
     }
 }
-
-/*
-while(true) {
-    $fp = fopen("php://stdin", "r");
-    $phone = trim(fgets($fp, 128));
-    if ($phone === 'exit') {
-        exit;
-    }
-    $ret = Tieba_Param::checkPhone($phone);
-    if (0 < $ret) {
-        var_dump("is phone!");
-    } else {
-        var_dump("not!");
-    }
-}
- */
 
 ?>

@@ -3,6 +3,8 @@
 class Storage_Db {
     private static $_dbMap = null;
 
+    private static $_lastsql = "";
+
     /*
      * 
      $dbConfig = array(
@@ -27,6 +29,7 @@ class Storage_Db {
     }
 
     public static function query($sql, $dbconfig, $is_throw_exception = false, $is_debug = false) {
+        self::$_lastsql = $sql;
         $db = self::_getDb($dbconfig);
         $ret_handler = $db->query($sql);
         if(0 === $db->errno) {
@@ -45,7 +48,7 @@ class Storage_Db {
 
     public static function getError($dbconfig) {
         $db = self::_getDb($dbconfig);
-        return array($db->errno, $db->error);
+        return array($db->errno, sprintf("sql:[%s], msg[%s]", self::$_lastsql, $db->error));
     }
 
 }
